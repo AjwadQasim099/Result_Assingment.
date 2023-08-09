@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>Roll No:</label>
+        <input type="number" class="Input" id="RollNo">
+        <br> <br>
+        <label>Name:</label>
+        <input type="text" class="Input" id="Name">
+        <br> <br>
+        <label>FatherName:</label>
+        <input type="text" class="Input" id="F_Name">
+        <br> <br>
+        <label id="label">Age:</label>
+        <input type="number" class="Input" id="Age">
+        <br>
+        <h3>English Marks:</h3>
+        <label>Total Marks:</label>
+        <input type="number" class="Input" id="EnglishT">
+        <br> <br>
+        <label>Obtained Marks:</label>
+        <input type="number" class="Input" id="EnglishO">
+        <br>
+        <h3>Urdu Marks:</h3>
+        <label >Total Marks:</label>
+        <input type="number" class="Input" id="UrduT">
+        <br> <br>
+        <label >Obtained Marks:</label>
+        <input type="number" class="Input" id="UrduO">
+        <br> <br>
+        <h3>Math Marks:</h3>
+        <label>Total Marks:</label>
+        <input type="number" class="Input" id="MathT">
+        <br> <br>
+        <label>Obtained Marks:</label>
+        <input type="number" class="Input" id="MathO">
+        <br> <br>
+        <h3>Physics Marks:</h3>
+        <label>Total Marks:</label>
+        <input type="number" class="Input" id="PhysicsT">
+        <br> <br>
+        <label>Obtained Marks:</label>
+        <input type="number" class="Input" id="PhysicsO">
+        <br> <br>
+        <h3>Biology Marks:</h3>
+        <label>Total Marks:</label>
+        <input type="number" class="Input" id="BiologyT">
+        <br> <br>
+        <label>Obtained Marks:</label>
+        <input type="number" class="Input" id="BiologyO">
+        <br> <br>
+        <button onclick="result()">SUBMIT</button>
+        <br> <br>
+        <label id="marklabl">Total Marks:</label>
+        <input class="Input" id="Tm">
+        <br> <br>
+        <label>Obtained Marks:</label>
+        <input class="Input" id="om">
+        <br> <br>
+        <label>Percentage:</label>
+        <input class="Input" id="per">
+        <br> <br>
+        <label>Grade:</label>
+        <input class="Input" id="grade">
+       </div>
+       <style>
+        div{
+            border: 3px solid black;
+            width: 25rem;
+            border-radius: 1rem;
+            background-color: burlywood;
+            height: 62rem;
+            margin-left: 30rem;
+            margin-top: 1rem;
+        }
+        label,h3,button{
+            margin-left: 1.4rem;
+        }
+        button{
+            background-color: burlywood;
+        }
+        #RollNo{
+           margin-left: 1.2rem;
+        }
+        #Name{
+            margin-left: 2.2rem;
+        }
+        #Age{
+            margin-left: 3rem;
+        }
+        #EnglishT,#UrduT,#MathT,#PhysicsT,#BiologyT{
+            margin-left: 1.7rem;
+        }
+        #Tm,#per{
+            margin-left: 2rem;
+        }
+        #grade{
+            margin-left: 3.6rem;
+        }
+       </style>
+
+<script>
+     function result()
+     {
+        let RollNo=document.getElementById("RollNo").value
+        let Name=document.getElementById("Name").value
+        let F_Name=document.getElementById("F_Name").value
+        let Age=document.getElementById("Age").value
+        let EnglishT=+document.getElementById("EnglishT").value
+        let EnglishO=+document.getElementById("EnglishO").value
+        let UrduT=+document.getElementById("UrduT").value
+        let UrduO=+document.getElementById("UrduO").value
+        let MathT=+document.getElementById("MathT").value
+        let MathO=+document.getElementById("MathO").value
+        let PhysicsT=+document.getElementById("PhysicsT").value
+        let PhysicsO=+document.getElementById("PhysicsO").value
+        let BiologyT=+document.getElementById("BiologyT").value
+        let BiologyO=+document.getElementById("BiologyO").value
+        let TM=EnglishT+UrduT+MathT+PhysicsT+BiologyT;
+        let Ob=EnglishO+UrduO+MathO+PhysicsO+BiologyO;
+        let per=Ob/TM*100
+        let grade="";
+        if(per>=80 && per<=100) 
+{
+    grade="A+"
+}
+else if(per>=70)
+{
+    grade="A"
+}
+else if(per>=60)
+{
+    grade="B"
+}
+else if(per>=50)
+{
+    grade="C"
+}
+else if(per>=40)
+{
+    grade="D"
+}
+else if(per<40)
+{
+    grade="Fail"
+}
+document.getElementById("Tm").value=TM;
+document.getElementById("om").value=Ob;
+document.getElementById("per").value=per.toFixed(2);
+document.getElementById("grade").value=grade;
+     }
+</script>
+</body>
+</html>
